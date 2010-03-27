@@ -1,0 +1,7 @@
+; $Id$
+name = Views Slideshow: Slider
+description = Adds a slider bar slideshow mode to Views Slideshows.
+dependencies[] = views_slideshow
+dependencies[] = jquery_ui
+package = Views
+core = 6.x

@@ -1,0 +1,9 @@
+/* $Id$ */
+
+.views_slideshow_slider_no_display,
+.views_slideshow_slider_hidden,
+.views_slideshow_slider_controls,
+.views_slideshow_slider_image_count {
+  display: none;
+}
+
