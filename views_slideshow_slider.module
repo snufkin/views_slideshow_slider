@@ -13,6 +13,11 @@
  */
 
 /**
+ * Minimal jQuery UI version the slider is compatible with.
+ **/
+define('VS_SLIDER_JQUERY_UI_VERSION', 1.7);
+
+/**
  * Implements hook_init().
  */
 function views_slideshow_slider_init() {
@@ -35,6 +40,27 @@ function views_slideshow_slider_init() {
   drupal_add_js($module_path . '/views_slideshow.js', 'module');
   drupal_add_css($module_path . '/views_slideshow.css', 'module');
 }
+
+/**
+ * Implementation of hook_requirements().
+ */
+function views_slideshow_slider_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+
+  $version = jquery_ui_get_version();
+  $requirements['slider_jquery_ui'] = array(
+    'title' => $t('Slider jQuery UI compatibility'),
+    'value' => $version,
+  );
+  if (version_compare($version, VS_SLIDER_JQUERY_UI_VERSION) < 0) {
+    $requirements['slider_jquery_ui']['descripion'] = $t('Views Slideshow Slider needs at least 1.7 version of the jQuery UI.');
+    $requirements['slider_jquery_ui']['severity'] = REQUIREMENT_ERROR;
+  }
+
+  return $requirements;
+}
+
 
 /**
  * Implements hook_theme().
