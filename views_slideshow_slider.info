@@ -1,4 +1,4 @@
-; $Id$
+; $Id: views_slideshow_slider.info,v 1.1 2010/03/27 17:17:43 snufkin Exp $
 name = Views Slideshow: Slider
 description = Adds a slider bar slideshow mode to Views Slideshows.
 dependencies[] = views_slideshow

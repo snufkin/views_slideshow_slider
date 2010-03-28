@@ -1,4 +1,4 @@
-// $Id: views_slideshow.js,v 1.1.2.1.2.17 2010/02/24 16:41:52 psynaptic Exp $
+// $Id: views_slideshow.js,v 1.1.2.1 2010/03/28 22:53:06 snufkin Exp $
 
 /**
  *  @file
@@ -45,18 +45,6 @@ Drupal.behaviors.viewsSlideshowSlider = function (context) {
       pause:settings.pause==1,
       prev:(settings.controls > 0)?'#views_slideshow_slider_prev_' + settings.id:null,
       next:(settings.controls > 0)?'#views_slideshow_slider_next_' + settings.id:null,
-      pager:(settings.pager > 0)?'#views_slideshow_slider_pager_' + settings.id:null,
-      pagerAnchorBuilder: function(idx, slide) {
-        var classes = 'pager-item pager-num-' + (idx+1);
-        if (idx % 2) {
-          classes += ' odd';
-        }
-        else {
-          classes += ' even';
-        }
-        
-        return Drupal.theme('viewsSlideshowPager' + settings.pager_type, classes, idx, slide);
-      },
       after:function(curr, next, opts) {
         // After a loop move the slider. 
         slider.slider('value', opts.currSlide);
@@ -137,13 +125,5 @@ Drupal.behaviors.viewsSlideshowSlider = function (context) {
       });
     }
   });
-}
-
-Drupal.theme.prototype.viewsSlideshowPagerThumbnails = function (classes, idx, slide) {
-  return '<div class="' + classes + '"><a href="#"><img src="' + $(slide).find('img').attr('src') + '" /></a></div>';
-}
-
-Drupal.theme.prototype.viewsSlideshowPagerNumbered = function (classes, idx, slide) {
-  return '<div class="' + classes + '"><a href="#">' + (idx+1) + '</a></div>';
 }
 

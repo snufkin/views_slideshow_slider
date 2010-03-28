@@ -1,4 +1,4 @@
-$Id$
+$Id: README.txt,v 1.1 2010/03/27 17:17:43 snufkin Exp $
 
 Views Slideshow: Slider
 ================================

@@ -1,5 +1,5 @@
 <?php
-// $Id$
+// $Id: views-slideshow-slider.tpl.php,v 1.1 2010/03/27 17:17:43 snufkin Exp $
 
 /**
  * @file

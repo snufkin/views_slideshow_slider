@@ -1,5 +1,5 @@
 <?php
-// $Id: views_slideshow_slider.theme.inc,v 1.1.2.1.2.20 2010/03/01 11:05:12 psynaptic Exp $
+// $Id: views_slideshow_slider.theme.inc,v 1.1 2010/03/27 17:17:43 snufkin Exp $
 
 /**
  * @file
