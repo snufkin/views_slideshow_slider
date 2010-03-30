@@ -21,7 +21,7 @@ Drupal.behaviors.viewsSlideshowSlider = function (context) {
         orientation: settings.orientation,
         value: 0,
         min: 0,
-        max: settings.num_divs,
+        max: settings.num_divs - 1, // We start from 0.
         range: "min",
         animate: true,
         step: 1,
