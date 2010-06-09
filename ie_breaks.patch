@@ -1,0 +1,11 @@
+--- views_slideshow.js.orig	2010-06-09 11:04:20.768262100 +0200
++++ views_slideshow.js	2010-06-09 11:04:38.065137100 +0200
+@@ -33,7 +33,7 @@ Drupal.behaviors.viewsSlideshowSlider =
+             settings.opts.startingSlide = ui.value;
+             $(settings.targetId).cycle(settings.opts);
+           }
+-        },
++        }
+     });
+ 
+     settings.opts = {
