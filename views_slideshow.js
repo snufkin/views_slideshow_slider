@@ -1,4 +1,4 @@
-// $Id: views_slideshow.js,v 1.1.2.1 2010/03/28 22:53:06 snufkin Exp $
+// $Id: views_slideshow.js,v 1.1.2.2 2010/03/30 18:03:28 snufkin Exp $
 
 /**
  *  @file
@@ -21,7 +21,7 @@ Drupal.behaviors.viewsSlideshowSlider = function (context) {
         orientation: settings.orientation,
         value: 0,
         min: 0,
-        max: settings.num_divs,
+        max: settings.num_divs - 1, // We start from 0.
         range: "min",
         animate: true,
         step: 1,
