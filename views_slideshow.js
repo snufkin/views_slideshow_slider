@@ -33,7 +33,7 @@ Drupal.behaviors.viewsSlideshowSlider = function (context) {
             settings.opts.startingSlide = ui.value;
             $(settings.targetId).cycle(settings.opts);
           }
-        },
+        }
     });
 
     settings.opts = {
