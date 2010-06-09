@@ -1,5 +1,5 @@
 <?php
-// $Id: views_slideshow_slider.theme.inc,v 1.1 2010/03/27 17:17:43 snufkin Exp $
+// $Id: views_slideshow_slider.theme.inc,v 1.1.2.1 2010/04/25 16:36:11 snufkin Exp $
 
 /**
  * @file
@@ -14,21 +14,20 @@ function template_preprocess_views_slideshow_slider(&$vars) {
   $id = $vars['id'];
   $view = $vars['view'];
   $rows = $vars['rows'];
-
   $settings = array_merge(
     array(
       'num_divs' => sizeof($vars['rows']),
-      'teasers_last' => ($options['slider']['teasers_last']) ? 'true' : 'false',
+      'teasers_last' => ($options['views_slideshow_slider']['teasers_last']) ? 'true' : 'false',
       'id_prefix' => '#views_slideshow_slider_main_',
       'div_prefix' => '#views_slideshow_slider_div_',
       'id' => $vars['id'],
     ),
-    $options['slider']
+    $options['views_slideshow_slider']
   );
 
 
-  if ('slider_left' == $options['slider']['position'] ||
-    'slider_right' == $options['slider']['position']) {
+  if ('slider_left' == $options['views_slideshow_slider']['position'] ||
+    'slider_right' == $options['views_slideshow_slider']['position']) {
     $settings['orientation'] = 'vertical';
   }
   else {
@@ -40,9 +39,9 @@ function template_preprocess_views_slideshow_slider(&$vars) {
   drupal_add_js(array('viewsSlideshowSlider' => array("#views_slideshow_slider_main_$id" => $settings)), 'setting'); 
 
   $hidden_elements = theme('views_slideshow_slider_no_display_section', $view, $rows, $id, $options, $teaser);
-  $vars['slideshow'] = theme('views_slideshow_main_section', $id, $hidden_elements, 'slider');
+  $vars['slideshow'] = theme('views_slideshow_main_section', $id, $hidden_elements, 'views_slideshow_slider');
 
-  $slider = $vars['options']['slider'];
+  $slider = $options['views_slideshow_slider'];
 
   if ($slider['controls'] == 1) {
     $vars['controls_top'] = theme('views_slideshow_slider_controls', $id, $view, $options);

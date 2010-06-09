@@ -1,7 +1,8 @@
-; $Id: views_slideshow_slider.info,v 1.1 2010/03/27 17:17:43 snufkin Exp $
+; $Id: views_slideshow_slider.info,v 1.1.2.1 2010/04/25 16:36:11 snufkin Exp $
 name = Views Slideshow: Slider
 description = Adds a slider bar slideshow mode to Views Slideshows.
 dependencies[] = views_slideshow
 dependencies[] = jquery_ui
+dependencies[] = jquery_update
 package = Views
 core = 6.x
